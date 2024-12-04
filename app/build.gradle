@@ -1,0 +1,27 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 19 // The SDK that we want to compile for
+    buildToolsVersion "19.1.0" // The build tools that should be installed in the SDK.
+
+    defaultConfig {
+        applicationId "gabilheri.com.flashcards" // This should your application ID do not copy mine.
+        minSdkVersion 16 // Here is where we change the  minimum SDK
+        targetSdkVersion 19 // The target SDK version. SDK 19 = 4.4 Kit kat
+        versionCode 1 // The version Code is used by the Play Store. Every time an update is pushed to the play store the version code should be updated as well.
+        versionName "1.0" // Visible version name for the users on the Play Store
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar']) // Will compile all the Libraries inside the 'libs' folder
+    compile 'com.android.support:support-v4:19.1.0' // We will be using the support library for the Drawer layout
+    compile 'com.android.support:support-v13:20.0.0'
+    compile 'com.github.gabrielemariotti.cards:library:1.9.1' // Very good library to use cards
+}
